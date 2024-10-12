@@ -28,7 +28,7 @@ pipeline {
         stage('Push Docker Image to Docker Hub') {
             steps {
                 sh '''
-                docker push igfred/weatherapp
+                docker push igfred/weatherapp:latest
                 '''
             }
         }
