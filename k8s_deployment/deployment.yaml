@@ -20,21 +20,3 @@ spec:
         ports:
           - containerPort: 3000
 
----
-##the service: This part exposes the image to the external world
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: weather-svc
-  labels:
-    app: weather-deployment
-spec:
-  type: NodePort
-  selector:
-    app: weather-deployment
-  ports:
-    - port: 3000
-      targetPort: 3000
-      nodePort: 30009
-
