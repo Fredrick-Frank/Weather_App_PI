@@ -40,6 +40,7 @@ pipeline {
         }
         stage('Running the image on K8s Cluster') {
             steps {
+                sh "kubectl replace --force -f ./k8s_deployment"
                 sh "kubectl apply -f ./k8s_deployment"
                 sh "kubectl get pods"
                 sh "kubectl get deploy"
