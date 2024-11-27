@@ -13,16 +13,6 @@ pipeline {
                 echo 'Login successfully'
             }
         }
-        stage('Install Docker') {
-            steps {
-            sh '''
-                sudo apt update
-                sudo apt install docker.io -y
-                sudo systemctl start docker
-                sudo systemctl enable docker
-            '''
-            }
-        }
         stage('Build docker images') {
             steps {
                 // Building stage
