@@ -39,7 +39,7 @@ pipeline {
         }
         stage('Running the image on K8s Cluster') {
             steps {
-                sh "kubectl apply --validate=false -f ./k8s_deployment"
+                sh "kubectl apply -f ./k8s_deployment"
                 sh "kubectl get pods"
                 sh "kubectl get deploy"
             }
@@ -56,7 +56,7 @@ pipeline {
     post {
         success {
             // Actions to be perform when the pipeline is successful
-            echo "DevOps Project... Agba builder ${BUILD_ID} build"
+            echo "DevOps Project... Eureka ${BUILD_ID} build"
         }
         failure {
             echo "Pipeline failed...Oooops T-pain"
